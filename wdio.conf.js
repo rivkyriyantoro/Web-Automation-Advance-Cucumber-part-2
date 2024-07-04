@@ -1,5 +1,3 @@
-import { browser } from '@wdio/globals'
-
 export const config = {
     //
     // ====================
@@ -53,7 +51,9 @@ export const config = {
     //
     capabilities: [{
         browserName: 'chrome'
-    }],
+    }, {
+        browserName: 'MicrosoftEdge'
+    }],
 
     //
     // ===================
@@ -125,12 +125,12 @@ export const config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec','cucumberjs-json'],
+    reporters: ['spec',['allure', {outputDir: 'allure-results'}],'cucumberjs-json'],
 
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./features/step-definitions/steps.js'],
+        require: ['./features/step-definitions/steps.js', './features/step-definitions/steps.sauce.js'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
@@ -142,7 +142,7 @@ export const config = {
         // <string[]> Only execute the scenarios with name matching the expression (repeatable).
         name: [],
         // <boolean> hide step definition snippets for pending steps
-        snippets: false,
+        snippets: true,
         // <boolean> hide source uris
         source: true,
         // <boolean> fail if there are any undefined or pending steps
@@ -254,9 +254,9 @@ export const config = {
      * @param {number}             result.duration  duration of scenario in milliseconds
      * @param {object}             context          Cucumber World object
      */
-    afterStep: function (step, scenario, result, context) {
-        if (result.passed) {
-            browser.saveScreenshot('.tmp/failed-test.png')
+    afterStep: async function (step, scenario, result, context) {
+        if (!result.passed) {
+            await browser.saveScreenshot('./screenshot/failed-test.png')
         }
     },
     /**

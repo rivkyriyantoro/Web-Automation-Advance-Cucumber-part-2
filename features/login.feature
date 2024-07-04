@@ -1,6 +1,13 @@
-Feature: Saucedemo login
+@example
+Feature: The Internet Guinea Pig Website
 
-  Scenario: Success login using standard user
-    Given user is on Saucedemo homepage
-    When user login using "standard_user" as username and "secret_sauce" as password
-    Then user should see "Swag labs" text displayed
+  Scenario Outline: As a user, I can log into the secure area
+
+    Given I am on the login page
+    When I login with <username> and <password>
+    Then I should see a flash message saying <message>
+
+    Examples:
+      | username | password             | message                        |
+      | tomsmith | SuperSecretPassword! | You logged into a secure area! |
+      | foobar   | barfoo               | Your username is invalid!      |

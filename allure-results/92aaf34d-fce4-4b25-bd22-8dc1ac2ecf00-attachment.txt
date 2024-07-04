@@ -1,0 +1,5 @@
+{
+  "error": "no such element",
+  "message": "no such element: Unable to locate element: {\"method\":\"css selector\",\"selector\":\"#inventory_containerassd\"}\n  (Session info: chrome=124.0.6367.119)",
+  "stacktrace": "\tGetHandleVerifier [0x00007FF6E3A01552+60802]\n\t(No symbol) [0x00007FF6E397AC52]\n\t(No symbol) [0x00007FF6E3837CE4]\n\t(No symbol) [0x00007FF6E3886D4D]\n\t(No symbol) [0x00007FF6E3886E1C]\n\t(No symbol) [0x00007FF6E38CCE37]\n\t(No symbol) [0x00007FF6E38AABBF]\n\t(No symbol) [0x00007FF6E38CA224]\n\t(No symbol) [0x00007FF6E38AA923]\n\t(No symbol) [0x00007FF6E3878FEC]\n\t(No symbol) [0x00007FF6E3879C21]\n\tGetHandleVerifier [0x00007FF6E3D041ED+3217949]\n\tGetHandleVerifier [0x00007FF6E3D46187+3488183]\n\tGetHandleVerifier [0x00007FF6E3D3F10F+3459391]\n\tGetHandleVerifier [0x00007FF6E3ABB916+823622]\n\t(No symbol) [0x00007FF6E3985FEF]\n\t(No symbol) [0x00007FF6E3980F14]\n\t(No symbol) [0x00007FF6E39810A2]\n\t(No symbol) [0x00007FF6E39718F4]\n\tBaseThreadInitThunk [0x00007FFD4A41257D+29]\n\tRtlUserThreadStart [0x00007FFD4B2AAA48+40]\n"
+}
