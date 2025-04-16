@@ -1,2 +1,2 @@
-### Muhammad Rezy Pradipta
+### Rivky Riyantoro
 ### Quality Assurance
